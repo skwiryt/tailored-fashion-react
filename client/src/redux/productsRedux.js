@@ -26,9 +26,9 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 
 /* thunk creators */
 export const loadProductsRequest = loadedProducts => {
-  console.log('loadProductsRequest thunk is called, and !loadedProducts.length: ', !loadedProducts.length);
-  if (typeof loadedPosts !== 'undefined' && !loadedProducts.length) {
-    return async dispatch => {
+  console.log('loadProductsRequest thunk is called');  
+  return async dispatch => {
+    if (typeof loadedProducts !== 'undefined' && !loadedProducts.length) {
       console.log('dispatch for fetch fired by Thunk');
       dispatch(requestStart('LOAD_PRODUCTS'));
       try {
@@ -40,12 +40,8 @@ export const loadProductsRequest = loadedProducts => {
         // dispatch(requestError(err.message || true));
         dispatch(requestError('LOAD_PRODUCTS'));
       }
-    };
-  } else {
-    return dispatch => {
-      dispatch(requestSuccess('LOAD_PRODUCTS'));
-    };
-  }
+    }      
+  };
 };
 
 /* reducer */

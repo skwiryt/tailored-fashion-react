@@ -1,0 +1,8 @@
+[
+  {
+    "title": "First test product",
+    "text": "It serves as a test of both local and Atlas DB",
+    "photo": "photo1.jpg",
+    "price": 100
+  }
+]
