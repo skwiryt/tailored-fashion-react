@@ -50,3 +50,8 @@ db.once('open', () => {
 db.on('error', err => console.log('Error ' + err));
 
 module.exports = server;
+/*
+/home/mzb/works/kodilla/tailored-fashion-react/products.json
+mongoimport --uri "connection string goes here" --collection products --drop --file /home/mzb/works/kodilla/tailored-fashion-react/products.json --jsonArray
+
+*/

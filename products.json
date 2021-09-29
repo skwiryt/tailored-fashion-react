@@ -1,8 +1,107 @@
-[
+[  
   {
-    "title": "First test product",
-    "text": "It serves as a test of both local and Atlas DB",
-    "photo": "photo1.jpg",
-    "price": 100
+    "title": "Hat White",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "hatwhite_1.jpg",
+    "price": 100,
+    "images": ["hatwhite_10.jpg", "hatwhite_11.jpg"]
+  },
+  {
+    "title": "Denim Jean",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "denimjean_1.jpg",
+    "price": 100,
+    "images": ["denimjean_10"]
+  },
+  {
+    "title": "Jacket",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "jacket_1.jpg",
+    "price": 100,
+    "images": ["jacket_10.jpg", "jacket_11.jpg", "jacket_12.jpg"]
+  },
+  {
+    "title": "Hat Black",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "hatblack_1.jpg",
+    "price": 100,
+    "images": []
+  },
+  {
+    "title": "Grill Tee",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "grilltee_1.jpg",
+    "price": 100,
+    "images": ["grilltee_10"]
+  },
+  {
+    "title": "Shorts",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "shorts_1.jpg",
+    "price": 100,
+    "images": ["shorts_10.jpg", "shorts_11.jpg", "shorts_12.jpg"]
+  },
+  {
+    "title": "Silk Up",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "silkup_1.jpg",
+    "price": 100,
+    "images": ["silkup_10.jpg", "silkup_11.jpg", "silkup_12.jpg"]
+  },
+  {
+    "title": "Stripe Jacket",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "stripejacket_1.jpg",
+    "price": 100,
+    "images": ["stripejacket_10.jpg", "stripejacket_11.jpg", "stripejacket_12.jpg"]
+  },
+  {
+    "title": "Stripe Short",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "stripeshort_1.jpg",
+    "price": 100,
+    "images": ["stripeshort_10"]
+  },
+  {
+    "title": "Sweat Pants One",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "sweatpants_1.jpg",
+    "price": 100,
+    "images": ["sweatpants_10"]
+  },
+  {
+    "title": "Sweat Pants Two",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "sweatpants_2.jpg",
+    "price": 100,
+    "images": ["sweatpants_20.jpg", "sweatpants_21.jpg", "sweatpants_22.jpg"]
+  },
+  {
+    "title": "Swaeat Shirt One",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "sweatshirt_1.jpg",
+    "price": 100,
+    "images": ["sweatshirt_10.jpg", "sweatshirt_11.jpg", "sweatshirt_12.jpg"]
+  },
+  {
+    "title": "Swaeat Shirt Two",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "sweatshirt_2.jpg",
+    "price": 100,
+    "images": ["sweatshirt_20.jpg", "sweatshirt_21.jpg", "sweatshirt_22.jpg"]
+  },
+  {
+    "title": "Work Shirt One",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "workshirt_1.jpg",
+    "price": 100,
+    "images": ["workshirt_10.jpg", "workshirt_11.jpg", "workshirt_12.jpg"]
+  },
+  {
+    "title": "Work Shirt Two",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+    "photo": "workshirt_2.jpg",
+    "price": 100,
+    "images": ["workshirt_20.jpg", "workshirt_21.jpg", "workshirt_22.jpg"]
   }
 ]

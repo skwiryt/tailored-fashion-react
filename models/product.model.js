@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 
 const productSchema = new mongoose.Schema({ 
   title: { type: String, required: true },
-  text: { type: String, required: true },
+  text: { type: String },
   photo: { type: String, required: true },
   price: { type: Number, required: true },
+  images: [String],
 });
 
 productSchema.method('toClient', function() {
