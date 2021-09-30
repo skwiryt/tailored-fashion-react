@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// poniższe działa w trybie dev ale wywali w build
+// import 'bootstrap/scss/bootstrap.scss';
 import './styles/global.scss';
 import reportWebVitals from './reportWebVitals';
 

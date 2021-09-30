@@ -1,7 +1,8 @@
 @import "./settings.scss";
 @import "./normalize.scss";
-@import "~bootstrap/scss/bootstrap.scss";
-
+// @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+// @import "~bootstrap/scss/bootstrap.scss";
+// powyższe oba działają w trybie dev ale build nie wychodzi
 
 *, *::before, *::after {
   box-sizing: border-box;
