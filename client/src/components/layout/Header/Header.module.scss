@@ -1,4 +1,23 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  width: 94vw;
+  background-color: $color-sub-background;
+  border: 1px solid $color-dark;
+  padding: 1.5 * $base-size 2 * $base-size;
+  z-index: 10;
+  position: fixed;
+  top: 0;
+ }
+ nav {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .link {
+   margin: 0 2 * $base-size;
+ }
+ .logo {
+   font-size: 1.8 * $base-size;
+   padding-right: 6 * $base-size;
+ }

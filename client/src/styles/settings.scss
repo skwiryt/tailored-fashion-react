@@ -1,0 +1,18 @@
+$color-main-background: #EFEFEF;
+$color-sub-background: #FFFFFF;
+
+$color-dark: black;
+
+$font-header: 'Montserrat', sans-serif;
+$font-text: 'Source Sans Pro', sans-serif;
+
+$radius: 5px;
+$base-size: 11px;
+$transition: all 0.5s;
+
+@mixin p-el($element) {
+  &:#{$element}, &::#{$element} {
+    position: absolute;
+    @content;
+  }
+}

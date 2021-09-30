@@ -1,4 +1,44 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin-top: 4 * $base-size;
+ }
+ .productPrice {
+  text-align: center;
+  visibility: hidden;
+}
+ .productBox {
+   width: 100%;
+   &:hover img {
+    transform: scale(120%);
+  }
+  .productImage {
+    height: 40vw;
+    border: 1px solid $color-dark;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+   
+    @media (min-width: 768px) {    
+       height: 28vw;    
+   }
+  }
+  &:hover .productImage {
+    border: 2px solid rgb(212, 212, 212);
+  }
+  &:hover .productPrice {
+    visibility: visible;
+  }
+ }
+ 
+ 
+ .productTitle {
+   padding: $base-size 0 0 0;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: .15rem;
+ }

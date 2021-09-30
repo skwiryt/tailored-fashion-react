@@ -1,6 +1,29 @@
-@import './settings.scss';
-@import './normalize.scss';
+@import "./settings.scss";
+@import "./normalize.scss";
+@import "~bootstrap/scss/bootstrap.scss";
 
-* {
-  background-color: orange;
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  background: $color-main-background;
+  font-family: $font-text;
+  font-size: ($base-size * 1.3);
+  color: $color-dark;
+  letter-spacing: 0.5px;
+  overflow-y: scroll;
+}
+
+a, a:hover, a:visited {
+  color: $color-dark;
+  text-decoration: none;
+}
+a:hover {
+  font-weight: bolder;
+}
+
+

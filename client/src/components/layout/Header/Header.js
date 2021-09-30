@@ -6,10 +6,16 @@ import styles from './Header.module.scss';
 const Header = () => (
   <div className={styles.root}>
     <nav className={styles.navBar}>
-      <NavLink className={styles.link} exact to={`/`} activeClassName='active'>Home</NavLink>
-      <NavLink className={styles.link} exact to={`/cart`} activeClassName='active'>Cart</NavLink>
-      <NavLink className={styles.link} exact to={`/orderform`} activeClassName='active'>OrderForm</NavLink>
-      <NavLink className={styles.link} exact to={`/product/2`} activeClassName='active'>Some product link</NavLink>
+      <div className={styles.pageMenu}>
+        <NavLink className={styles.link} exact to={`/`} activeClassName='active'>HOME</NavLink>
+        <NavLink className={styles.link} exact to={`/`} activeClassName='active'>ABOUT</NavLink>
+      </div>
+      <div className={styles.logo}>
+        <NavLink className={styles.link} exact to={`/`} activeClassName='active'>TAILORED FASHION</NavLink>
+      </div>
+      <div className={styles.shopMenu}>
+        <NavLink className={styles.link} exact to={`/cart`} activeClassName='active'>CART</NavLink>
+      </div> 
     </nav>
   </div>
 );

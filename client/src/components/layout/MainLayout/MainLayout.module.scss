@@ -1,4 +1,9 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  width: 94vw;
+  margin: 0 auto;
+ }
+.content {
+  padding-top: 6 * $base-size;
+}

@@ -8,7 +8,9 @@ import { Header } from './../Header/Header';
 const MainLayout = ({ children }) => (
   <div className={styles.root}>
     <Header />
-    {children}
+    <div className={styles.content}>
+      {children}
+    </div>   
   </div>
 );
 
