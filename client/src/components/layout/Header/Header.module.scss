@@ -8,6 +8,7 @@
   z-index: 10;
   position: fixed;
   top: 0;
+  letter-spacing: $font-spacing;
  }
  nav {
    display: flex;
@@ -18,6 +19,7 @@
    margin: 0 2 * $base-size;
  }
  .logo {
-   font-size: 1.8 * $base-size;
+   font-size: 1.5 * $font-base-size;
    padding-right: 6 * $base-size;
+   
  }

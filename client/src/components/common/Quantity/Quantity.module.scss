@@ -1,0 +1,47 @@
+@import '../../../styles/settings.scss';
+
+$border-radius: 3px;
+
+.quantityBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 140px;
+  border: 1px solid $color-light;
+  border-radius: $border-radius;
+  
+  > * {
+    outline: none;
+  }
+}
+
+.quantityAdjust {
+  padding: .7rem;
+  width: 3rem;
+  font-size: 1rem;  
+  background: $color-main-background;
+  color: $color-dark;
+  border: 0;
+  text-align: center;  
+  cursor: pointer;
+  
+  &:hover {
+    background: darken($color-main-background, 10%);
+  }
+  
+  &.down {
+    border-radius: $border-radius 0 0 $border-radius;
+  }
+  
+  &.up {
+    border-radius: 0 $border-radius $border-radius 0;
+  }
+}
+
+.quantityInput {
+  width: 100%;
+  padding: .7rem;
+  font-size: 1rem;  
+  border: 0;  
+  text-align: center;
+}

@@ -11,7 +11,7 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     "photo": "denimjean_1.jpg",
     "price": 100,
-    "images": ["denimjean_10"]
+    "images": ["denimjean_10.jpg"]
   },
   {
     "title": "Jacket",
@@ -32,7 +32,7 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     "photo": "grilltee_1.jpg",
     "price": 100,
-    "images": ["grilltee_10"]
+    "images": ["grilltee_10.jpg"]
   },
   {
     "title": "Shorts",
@@ -60,14 +60,14 @@
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     "photo": "stripeshort_1.jpg",
     "price": 100,
-    "images": ["stripeshort_10"]
+    "images": ["stripeshort_10.jpg"]
   },
   {
     "title": "Sweat Pants One",
     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
     "photo": "sweatpants_1.jpg",
     "price": 100,
-    "images": ["sweatpants_10"]
+    "images": ["sweatpants_10.jpg"]
   },
   {
     "title": "Sweat Pants Two",

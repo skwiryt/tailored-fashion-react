@@ -3,7 +3,7 @@ import { API_URL } from '../config';
 
 /* selectors */
 export const getProducts = ({products}) => products.data;
-
+export const getProduct = ({products}, id) => products.data.find(p => p.id === id);
 export const getRequest = ({posts}, type) => posts.requests[type];
 
 /* action name creator */
@@ -28,7 +28,7 @@ export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 export const loadProductsRequest = loadedProducts => {
   console.log('loadProductsRequest thunk is called');  
   return async dispatch => {
-    if (typeof loadedProducts !== 'undefined' && !loadedProducts.length) {
+    if (!loadedProducts || !loadedProducts.length) {
       console.log('dispatch for fetch fired by Thunk');
       dispatch(requestStart('LOAD_PRODUCTS'));
       try {

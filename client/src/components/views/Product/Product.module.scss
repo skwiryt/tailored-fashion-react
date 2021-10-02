@@ -1,4 +1,82 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin-top: 4 * $base-size;
+}
+.productImage {
+  position: relative;
+  border: 1px solid $color-dark;
+  width: 100%;
+  height: 75vw;
+  overflow: hidden;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+  .hidden {
+    opacity: 0;
+  }
+  .visible {
+    opacity: 1;
+  }
+  .placeholder {
+    font-size: 1.1rem;
+    color: #2B4C6F;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);    
+  }
+}
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 2*$base-size;
+  > div {
+    margin-bottom: 2 * $base-size;
+  }
+  .logo {
+    text-transform: uppercase;
+    letter-spacing: $font-spacing;
+  }
+  .productTitle {
+    font-size: $font-base-size * 2;
+    text-transform: uppercase;
+    letter-spacing: $font-spacing;
+  }
+  .productPrice {
+    font-size: $font-base-size * 1.3;
+    color: $color-light;
+  }
+  .productText {
+    max-width: 300px;
+  }
+  .thumbnails {
+    display: flex;
+    .thumbnail {
+      width: $thumb-width;
+      overflow: hidden;
+      margin-right: 5px;
+      img {
+        width: 100%;
+      }
+
+      &.active {
+        border: 1px solid $color-dark;
+      }
+    }
+  }
+  .addButton {
+    width: 70%;
+    max-width: 350px;
+    min-width: 200px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: $color-sub-background;
+    background: black;
+  }
+}
