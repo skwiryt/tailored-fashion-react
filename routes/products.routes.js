@@ -14,10 +14,10 @@ router.get('/products', async (req, res) => {
     res.status(500).json(err);
   }
 });
-/*
-router.get('/posts/:id', async (req, res) => {
+
+router.get('/products/:id', async (req, res) => {
   try {
-    const result = await Post
+    const result = await Product
       .findById(req.params.id);
     if(!result) res.status(404).json({ post: 'Not found' });
     else res.json(result.toClient());
@@ -27,6 +27,7 @@ router.get('/posts/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+/*
 const validation = (input) => {
   let { author, email, title,text } = input;
   if ( 

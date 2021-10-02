@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Product.module.scss';
-import {PHOTO_URL} from '../../../config';
+import axios from 'axios';
+import {PHOTO_URL, API_URL} from '../../../config';
 import { connect } from 'react-redux';
 import {getProduct, loadProductsRequest} from '../../../redux/productsRedux';
 import { Quantity } from '../../common/Quantity/Quantity';
@@ -11,13 +12,19 @@ class Product extends React.Component {
     imageLoaded: false,
     quantity: 1,
     pickedImage: '',
+    error: false,    
   }
-
   componentDidMount = () => {
-    const {product, loadProducts} = this.props;
-    if (!product) {
-      loadProducts();
-    }   
+    const fetchProduct = async () => {
+      try {
+        const response = await axios.get(API_URL + '/products/' + this.props.match.params.id);
+        this.setState({...this.state, product: response.data, error: false});
+        
+      } catch(err) {
+        this.setState({...this.state, error: true});
+      }
+    };
+    fetchProduct();
   }
   setImageLoaded = (booleanValue) => {
     this.setState({...this.state, imageLoaded: booleanValue});
@@ -29,9 +36,15 @@ class Product extends React.Component {
     this.setState({...this.state, quantity: value});
   }
   render = () => {
-    const {product} = this.props;
+    const {product, error} = this.state;
     const {imageLoaded, quantity, pickedImage} = this.state;   
-    if(!product) return (<div className=''>Loading ...</div>);
+    if(!product) return (
+      
+      <div>
+        <div className=''>Loading ...</div>
+        {error && <div>Error occurred while loading.</div>}
+      </div>
+    );
     else {
       const mainImage = pickedImage ? pickedImage : product.photo;
       const getThumbClass = (image) => {
@@ -94,8 +107,7 @@ const mapDispatchToProps = (dispatch) => ({
 const ProductContainer = connect(mapStateToProps, mapDispatchToProps)(Product);
 
 Product.propTypes = {
-  product: PropTypes.object,
-  loadProducts: PropTypes.func,
+  match: PropTypes.object,
 };
 
 
