@@ -3,34 +3,31 @@ import PropTypes from 'prop-types';
 import styles from './Quantity.module.scss';
 
 class Quantity extends React.Component {
-
-  state = {value: 1};
-  
   
   increment = () => {
-    const {changeQuantity} = this.props;
-    this.setState({...this.state, value: this.state.value + 1}, () => { changeQuantity(this.state.value);});
+    const {changeQuantity, value} = this.props;
+    const newValue = value + 1;
+    changeQuantity(newValue);
   }
   
   decrement = () => {
-    const {changeQuantity} = this.props;
-    if (this.state.value > 1) {
-      this.setState({...this.state, value: this.state.value -1}, () => { changeQuantity(this.state.value);});
+    const {changeQuantity, value} = this.props;    
+    if (value > 1) {
+      const newValue = value - 1;
+      changeQuantity(newValue);      
     }    
   }
   
   render() {
-    
+    const {value} = this.props;
     return (
       <div>
-        <p>
-        Set the quantity
-        </p>
+       
         <div className={styles.quantityBox}>
           <button className={styles.quantityAdjust + ' ' + styles.down} onClick={this.decrement}>
             &mdash;
           </button>
-          <input className={styles.quantityInput} type="text" value={this.state.value} readOnly />
+          <input className={styles.quantityInput} type="text" value={value} readOnly />
           <button className={styles.quantityAdjust + ' ' + styles.up} onClick={this.increment}>
             &#xff0b;
           </button>  
@@ -42,6 +39,7 @@ class Quantity extends React.Component {
 
 Quantity.propTypes = {
   changeQuantity: PropTypes.func,
+  value: PropTypes.number,
 };
 
 

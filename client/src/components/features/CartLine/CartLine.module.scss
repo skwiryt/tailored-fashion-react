@@ -1,0 +1,82 @@
+@import '../../../styles/settings.scss';
+
+.root {
+  position: relative;
+  margin-bottom: 4 * $base-size;
+  &::after {   
+     position: absolute;
+     bottom: - 2 * $base-size;
+     width: 100%;
+     content: '';
+     border-top: 1px solid black;
+     // margin-bottom: 2 * $base-size;
+   }
+ } 
+ 
+ .productImage {
+  position: relative;
+  border: 1px solid $color-dark;
+  width: 100%;
+  height: 12vw;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+    
+}
+.productInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 2 * $base-size;
+  height: 100%;
+
+  .productTitle {
+    font-size: $font-base-size;
+    text-transform: uppercase;
+    letter-spacing: $font-spacing;
+  }
+  .productPrice {
+    font-size: $font-base-size * 1.3;
+    color: $color-light;
+  }
+  p {
+    margin-bottom: 0.6em;
+  }
+}
+.controllQuantity {
+  display: flex;
+  flex-direction: column;
+
+  .removeBtn {
+    max-width: 140px;
+    outline: none;
+    border: none;
+    padding-top: $base-size;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+.notes {
+  height: 100%;
+  background-color: orange;
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    padding: $base-size;
+  }
+}
+.itemNb {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}

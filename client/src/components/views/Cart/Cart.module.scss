@@ -1,4 +1,17 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 4 * $base-size auto;
+  width: 60%;
+ }
+ .orderButton {
+  margin: 0 auto;
+  width: 70%;
+  max-width: 350px;
+  min-width: 200px;
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  color: $color-sub-background;
+  background: black;
+}

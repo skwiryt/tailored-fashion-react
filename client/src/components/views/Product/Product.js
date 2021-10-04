@@ -4,7 +4,8 @@ import styles from './Product.module.scss';
 import axios from 'axios';
 import {PHOTO_URL, API_URL} from '../../../config';
 import { connect } from 'react-redux';
-import {getProduct, loadProductsRequest} from '../../../redux/productsRedux';
+import {getProduct} from '../../../redux/productsRedux';
+import { addToCartRequest} from '../../../redux/cartRedux';
 import { Quantity } from '../../common/Quantity/Quantity';
 
 class Product extends React.Component {
@@ -34,6 +35,12 @@ class Product extends React.Component {
   }
   setQuantity = (value) => {
     this.setState({...this.state, quantity: value});
+  }
+  manageAddToCart = () => {
+    const {product, quantity} = this.state;
+    const {addToCart} = this.props;
+    const line = {productId: product.id, title: product.title, price: product.price, photo: product.photo, quantity};
+    addToCart(line);
   }
   render = () => {
     const {product, error} = this.state;
@@ -71,10 +78,13 @@ class Product extends React.Component {
                 <div className={styles.productText}>{product.text}</div>
                 <div className={styles.quantityBox}>
                   <div className={styles.legend}>
-                    <Quantity changeQuantity={this.setQuantity}/>
+                    <p>
+                      Quantity:
+                    </p>
+                    <Quantity value={quantity} changeQuantity={this.setQuantity}/>
                   </div>
                 </div>
-                <div className={styles.addButton}>ADD TO CART    ($ {product.price * quantity})</div>
+                <div onClick={this.manageAddToCart} className={styles.addButton}>ADD TO CART    ($ {product.price * quantity})</div>
                 <div className={styles.thumbnails}>                
                   <div className={getThumbClass(product.photo)}>
                     <img onClick={() => this.setPickedImage(product.photo)} src={`${PHOTO_URL}/${product.photo}`} alt='thumbnail' />
@@ -101,13 +111,14 @@ const mapStateToProps = (state, props) => ({
   product: getProduct(state, props.match.params.id),
 });
 const mapDispatchToProps = (dispatch) => ({
-  loadProducts: (products) => dispatch(loadProductsRequest(products)),
+  addToCart: (line) => dispatch(addToCartRequest(line)),
 });
 
 const ProductContainer = connect(mapStateToProps, mapDispatchToProps)(Product);
 
 Product.propTypes = {
   match: PropTypes.object,
+  addToCart: PropTypes.func,
 };
 
 

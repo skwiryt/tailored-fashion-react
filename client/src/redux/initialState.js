@@ -9,6 +9,23 @@ export const initialState = {
       },
     },
   },
+  cart: {
+    lines: [],
+    requests: {
+      LOAD_CART: {
+        active: false,
+        error: false,
+      },
+      ADD_LINE: {
+        active: false,
+        error: false,
+      },
+      REMOVE_LINE: {
+        active: false,
+        error: false,
+      },
+    },
+  },
   order: {
     lines: [],
     detailes: {
