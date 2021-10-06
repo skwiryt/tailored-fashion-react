@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { Link} from 'react-router-dom';
 import styles from './Cart.module.scss';
 import { CartLine} from '../../features/CartLine/CartLine';
 import {getCartLines, removeLineRequest} from '../../../redux/cartRedux';
@@ -21,7 +22,7 @@ class Cart extends React.Component  {
         {cartLines.map((cartLine, i) => (
           <CartLine removeLine={this.manageRemoveLine} lineNb={i + 1} key={cartLine.productId} cartLine={cartLine}/>
         ))}
-        <div onClick={this.checkOut} className={styles.orderButton}>{buttonText}</div>
+        <Link to="/orderform"><div onClick={this.checkOut} className={styles.orderButton}>{buttonText}</div></Link>
        
       </div>
     );

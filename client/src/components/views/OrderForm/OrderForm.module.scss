@@ -1,4 +1,78 @@
 @import '../../../styles/settings.scss';
 
-// .root {
-// }
+.root {
+  margin: 4 * $base-size auto;
+  width: 60%;
+}
+.pageHeader {
+  font-size: 2 * $base-size;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 2 * $base-size;
+
+}
+.contactHeader {
+  font-size: 1.5 * $base-size;
+  text-transform: uppercase;
+  text-align: center;
+  padding-bottom: 2 * $base-size;
+
+}
+
+.tableHeader {
+  color: $color-light;
+  padding-bottom: $base-size;
+}
+.note {
+  font-style: italic;
+}
+.noNote {
+  color: $color-light;
+  font-style: italic;
+} 
+.total {
+  font-size: 2 * $base-size;
+  text-align: right;
+  margin: $base-size 0 $base-size 0;
+}
+.contact {
+  margin-top: 3*$base-size;
+  padding: 3 * $base-size;
+  border-top: 1px solid $color-dark;
+  .formGroup {
+    width: 70%;
+    max-width: 350px;
+    min-width: 200px;
+    position: relative;
+    input {
+      width: 100%;
+      padding: $base-size;
+      &::placeholder {
+        text-align: center;
+      }
+      &:focus::placeholder {
+        color: transparent;
+      }    
+    }
+    .validationMessage {
+      color: red;
+      position:absolute;
+      top: -2 * $base-size;
+      font-size: 1.1 * $base-size;
+    }    
+    
+  }
+ 
+  
+  button {
+    width: 70%;
+    max-width: 350px;
+    min-width: 200px;
+    padding: 10px;
+    cursor: pointer;
+    text-align: center;
+    color: $color-sub-background;
+    background: black;
+    border: 0;
+  }
+}

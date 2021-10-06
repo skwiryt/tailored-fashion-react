@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 
 const productsRoutes = require('./routes/products.routes');
+const ordersRoutes = require('./routes/orders.routes');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -17,6 +18,7 @@ app.use(cors());
 
 // API
 app.use('/api', productsRoutes);
+app.use('/api', ordersRoutes);
 // API errors
 app.use('/api', (req, res) => {
   res.json({message: 'Not found'});
@@ -37,8 +39,8 @@ const server = app.listen(process.env.PORT || 8000, () => {
 const devDBString = process.env.TAILORED_DB_STRING;
 const testDBString = 'mongodb://localhost:27017/tailoredDB';
 // process.env prowadzi do bazy Atlas, więc dla lokalnego uruchomienia developerskiego wykomentuj tę linię
-const dbURI = process.env.NODE_ENV === 'test' ? testDBString : devDBString;
-// const dbURI = testDBString;
+// const dbURI = process.env.NODE_ENV === 'test' ? testDBString : devDBString;
+const dbURI = testDBString;
 
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });

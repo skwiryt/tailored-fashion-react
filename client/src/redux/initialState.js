@@ -26,14 +26,8 @@ export const initialState = {
       },
     },
   },
-  order: {
-    lines: [],
-    detailes: {
-      name: '',
-      email: '',
-    },
-    status: 'empty',
-    request: {   
+  order: {    
+    requests: {   
       SEND_ORDER: {
         active: false,
         error: false,
