@@ -15,12 +15,7 @@ class OrderForm extends React.Component {
     error: {email: null, name: null},
     sent: false,
   };
-  /*
-  componentDidMount = () => {
-    const { lines } = this.props.cartLines;  
-    this.setState({...this.state, order: {...this.state.order, lines}});     
-  }
-  */
+  
   handleChange = ({target}) => {
     const verifyError = () => {
       if (this.state.error.email || this.state.error.name) {
@@ -36,7 +31,6 @@ class OrderForm extends React.Component {
         }
       }
     };
-    // const { order, error } = this.state;
     const { name, value } = target;
     this.setState({...this.state, [name]: value}, verifyError);
   };
@@ -46,7 +40,6 @@ class OrderForm extends React.Component {
   emailOK = (email) => validator.isEmail(email);
 
   validateData = () => {
-    //const { order } = this.state;
     const {email, name} = this.state;
     console.log('name.length: ', name.length);
     console.log('nameOK: ', this.nameOK(name));
@@ -68,6 +61,7 @@ class OrderForm extends React.Component {
     e.preventDefault();
     
     const error = this.validateData();
+    // const error = {email: null, name: null};
     if(!error.email && !error.name) {      
       sendOrder(order);
       this.setState({ ...this.state, error: {email: null, name: null}, sent: true });

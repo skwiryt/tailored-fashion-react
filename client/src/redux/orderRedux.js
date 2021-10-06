@@ -31,7 +31,7 @@ export const sendOrderRequest = (order) => {
     try {
       const response = await axios.post(API_URL + '/orders', data);
       dispatch(requestSuccess('SEND_ORDER'));
-      //console.log('response.data: ', response.data);
+      console.log('response.data: ', response.data);
     } catch(err) {      
       console.log('err: ', err);
       dispatch(requestError('SEND_ORDER'));
