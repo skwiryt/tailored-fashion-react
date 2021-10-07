@@ -4,8 +4,9 @@ import { Link } from 'react-router-dom';
 import validator from 'validator';
 import styles from './OrderForm.module.scss';
 import { connect } from 'react-redux';
-import { sendOrderRequest , getRequest} from '../../../redux/orderRedux';
-import { getCartLines } from '../../../redux/cartRedux';
+// import { sendOrderRequest , getRequest} from '../../../redux/orderRedux';
+import { getCartLines, sendOrderRequest , getRequest } from '../../../redux/cartRedux';
+import { getUserId } from '../../../redux/userRedux';
 
 
 class OrderForm extends React.Component {
@@ -53,11 +54,12 @@ class OrderForm extends React.Component {
   }
   
   handleSubmit = (e) => {
+    const { userId } = this.props;
     const { email, name } = this.state;
     const lines = this.props.cartLines;
-    const order = {lines, email, name}; 
+    const order = {lines, email, name, userId}; 
     const {sendOrder} = this.props;
-    // const { user } = this.props;
+    
     e.preventDefault();
     
     const error = this.validateData();
@@ -153,11 +155,13 @@ OrderForm.propTypes = {
   sendOrder: PropTypes.func,
   cartLines: PropTypes.array,
   request: PropTypes.object,
+  userId: PropTypes.string,
 };
 
 const mapStateToProps = (state) => ({
   cartLines: getCartLines(state),
   request: getRequest(state, 'SEND_ORDER'),
+  userId: getUserId(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

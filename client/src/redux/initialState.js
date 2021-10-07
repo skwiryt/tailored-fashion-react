@@ -10,6 +10,7 @@ export const initialState = {
     },
   },
   cart: {
+    activeAgent: false,
     lines: [],
     requests: {
       LOAD_CART: {
@@ -23,15 +24,12 @@ export const initialState = {
       REMOVE_LINE: {
         active: false,
         error: false,
-      },
-    },
-  },
-  order: {    
-    requests: {   
+      }, 
       SEND_ORDER: {
         active: false,
-        error: false,
-      },
-    },  
-  },  
+        error: false,        
+      },  
+    },
+  },
+  
 };

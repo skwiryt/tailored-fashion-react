@@ -1,12 +1,10 @@
-import axios from 'axios';
-import { API_URL } from '../config';
-export const getRequest = ({order}, type) => order.requests[type];
-
 /* selectors */
+
+export const getUserId = ({user}) => user.id;
 
 
 /* action name creator */
-const reducerName = 'products';
+const reducerName = 'user';
 const createActionName = name => `app/${reducerName}/${name}`;
 
 /* action types */
@@ -14,37 +12,43 @@ const REQUEST_START = createActionName('REQUEST_START');
 const REQUEST_SUCCESS = createActionName('REQUEST_SUCCESS');
 const REQUEST_ERROR = createActionName('REQUEST_ERROR');
 
+const LOAD_USER = createActionName('LOAD_USER');
 
 /* action creators */
 export const requestStart = payload => ({ payload, type: REQUEST_START });
 export const requestSuccess = payload => ({ payload, type: REQUEST_SUCCESS });
 export const requestError = payload => ({ payload, type: REQUEST_ERROR });
 
+export const loadUser = payload => ({ payload, type: LOAD_USER });
+
+
 /* thunk creators */
-export const sendOrderRequest = (order) => {
-  
-  return async (dispatch) => {
-    console.log('order.lines: ', order.lines);
-    const {lines, name, email} = order;
-    const data = {lines, name, email};
-    dispatch(requestStart('SEND_ORDER'));
-    try {
-      const response = await axios.post(API_URL + '/orders', data);
-      dispatch(requestSuccess('SEND_ORDER'));
-      console.log('response.data: ', response.data);
-    } catch(err) {      
-      console.log('err: ', err);
-      dispatch(requestError('SEND_ORDER'));
-    }
-        
+// now userId is loaded from local storage
+// it is artificially generated if not existing
+
+export const loadUserRequest = () => {
+  console.log('loadUserRequest thunk is called'); 
+  let userId = localStorage.getItem('TF_userId') || '';
+  // artificialy generated userID      
+  if (!userId) {
+    userId = Math.floor(Math.random() * 10000).toString();
+    localStorage.setItem('TF_userId', userId);
+  }      
+  return async dispatch => {    
+    dispatch(loadUser(userId));
   };
 };
 
 /* reducer */
 export const reducer = (statePart = [], action = {}) => {
   switch (action.type) {
-   
     
+    case LOAD_USER: {
+      return {
+        ...statePart,
+        id: action.payload,
+      };
+    }
     case REQUEST_START : {
       return {
         ...statePart, requests: {...statePart.requests, [action.payload]: {active: true, error: false}},

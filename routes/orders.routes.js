@@ -15,8 +15,9 @@ const productsExist = async (lines) => {
   return exist
 }
 const validation = (input) => {  
-  let { name, email, lines } = input;
+  let { name, email, lines, userId } = input;
   if (
+    userId &&
     name && name.length > 4 && name.length < 31 &&
     lines && lines.length > 0 &&
     email && validator.isEmail(email)
@@ -26,13 +27,25 @@ const validation = (input) => {
     return false;
   }
 };
+router.get('/orders/user/:id', async (req, res) => {
+  try {
+    const result = await Order
+      .find({userId:  req.params.id})
+      .sort({documentDate: -1});    
+    if(!result.length) res.status(404).json({ message: 'ERROR. Order not found' });
+    else res.json(result.map(r => r.toClient()));
+  }
+  catch(err) {
+    res.status(500).json(err);
+  }
+});
 router.post('/orders', async (req, res) => {
-  let { email, name , lines} = req.body;
+  let { email, name , lines, userId} = req.body;
   if (validation(req.body)) { 
     if (await productsExist(lines)) {
       const documentDate = new Date();    
       try {        
-        const newOrder = new Order({name, email, documentDate, lines});
+        const newOrder = new Order({name, email, documentDate, lines, userId});
         const savedOrder = await newOrder.save();
         res.json(savedOrder.toClient());
       } catch(err) {

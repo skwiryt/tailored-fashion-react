@@ -8,21 +8,23 @@ import {getCartLines, removeLineRequest} from '../../../redux/cartRedux';
 
 
 class Cart extends React.Component  {
-  checkOut = () => {};
+  
   manageRemoveLine = (productId) => {
     const {removeLine} = this.props;
     removeLine(productId);
   }
   render = () => {
     const {cartLines} = this.props;
+    const isContent = cartLines.length > 0;
     const cartValue = cartLines.reduce((a, c) => c.quantity * c.price + a, 0);
-    const buttonText = cartLines && cartLines.length ? `CHECK OUT    ($ ${cartValue})` : 'CART IS EMPTY';
     return (
       <div className={styles.root}>
         {cartLines.map((cartLine, i) => (
           <CartLine removeLine={this.manageRemoveLine} lineNb={i + 1} key={cartLine.productId} cartLine={cartLine}/>
         ))}
-        <Link to="/orderform"><div onClick={this.checkOut} className={styles.orderButton}>{buttonText}</div></Link>
+        { isContent && <Link to="/orderform"><div className={styles.orderButton}>{`CHECK OUT    ($ ${cartValue})`}</div></Link>}
+        { !isContent && <div className={styles.orderButton}>CART IS EMPTY</div>}
+        
        
       </div>
     );

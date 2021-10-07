@@ -11,6 +11,7 @@
   letter-spacing: $font-spacing;
  }
  nav {
+   position: relative;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -19,7 +20,9 @@
    margin: 0 2 * $base-size;
  }
  .logo {
+   position: absolute;
+   left: 50%;
+   transform: translate(-50%);
    font-size: 1.5 * $font-base-size;
-   padding-right: 6 * $base-size;
    
  }

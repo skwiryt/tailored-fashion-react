@@ -4,6 +4,7 @@ const orderSchema = new mongoose.Schema({
   name: { type: String, required: true },
   email: { type: String, required: true },
   lines: { type: Array, required: true },
+  userId: { type: String, required: true },
   documentDate: { type: Date, required: true },
 });
 

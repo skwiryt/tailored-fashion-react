@@ -7,6 +7,7 @@ import { Cart } from './components/views/Cart/Cart';
 import { OrderForm } from './components/views/OrderForm/OrderForm';
 import { Product } from './components/views/Product/Product';
 import { Home } from './components/views/Home/Home';
+import { UserOrders } from './components/views/UserOrders/UserOrders';
 import { NotFound } from './components/views/NotFound/NotFound';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/orderform' component={OrderForm} />
+            <Route exact path='/userorders/:userId' component={UserOrders} />
             <Route exact path='/cart' component={Cart} />
             <Route exact path='/product/:id' component={Product} />
             <Route path='*' component={NotFound} />
