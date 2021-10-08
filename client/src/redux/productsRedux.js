@@ -4,7 +4,7 @@ import { API_URL } from '../config';
 /* selectors */
 export const getProducts = ({products}) => products.data;
 export const getProduct = ({products}, id) => products.data.find(p => p.id === id);
-export const getRequest = ({posts}, type) => posts.requests[type];
+export const getRequest = ({products}, type) => products.requests[type];
 
 /* action name creator */
 const reducerName = 'products';

@@ -16,13 +16,32 @@
     height: 40vw;
     border: 1px solid $color-dark;
     overflow: hidden;
+    
+    
+
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: top;
+      @extend %transition-params;
     }
-   
+    .hidden {
+      opacity: 0;
+    }
+    .visible {
+      opacity: 1;
+    }
+    /*
+    .placeholder {
+      font-size: 1.1rem;
+      color: #2B4C6F;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);    
+    }
+    */
     @media (min-width: 768px) {    
        height: 28vw;    
    }

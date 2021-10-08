@@ -6,7 +6,6 @@ import styles from './UserOrders.module.scss';
 
 class UserOrders extends React.Component  {
   state = {
-    orders: [],
     error: false,    
   }
   componentDidMount = () => {
@@ -26,45 +25,57 @@ class UserOrders extends React.Component  {
     removeLine(productId);
   }
   render = () => {
-    const {orders} = this.state;
-    const isContent = orders.length > 0;
-    return (
+    const {orders, error} = this.state;  
+    
+    if(!orders) return (
+    
       <div className={styles.root}>
-        { isContent && (<div>
-          <div className={styles.pageHeader}>Your Orders</div>
-          {orders.map(order => (
-            <div key={order.id}>
-              <div className={styles.orderHeader}>Order id: {order.id}, Amount: $ {order.lines.reduce((a, c) => c.price * c.quantity + a, 0)}</div>
-              <div className={styles.orderContent}>
-                {order.lines.map((line, i) => (
-                  <div key={line.producId} className={styles.orderLine}>
-                    <div className="row">
-                      <div className="col-1">
-                        {i + 1}.
-                      </div>
-                      <div className="col-7">
-                        {line.title} ($ {line.price})
-                      </div>
-                      <div className="col-2">
-                        {line.quantity}
-                      </div>
-                      <div className="col-2">
-                        {line.quantity * line.price}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-            </div>
-          ))}
-          
-        </div>)
-        }
-        {!isContent &&  <div className={styles.pageHeader}>There is no orders of this user</div> }
-        
+        <div className=''>Loading ...</div>
+        {error && <div className="alert errorAlert">Error occurred while loading.</div>}
       </div>
     );
+    else {
+      const isContent = orders.length > 0;
+      return (
+        <div className={styles.root}>
+          { isContent && (<div>
+            <div className={styles.pageHeader}>Your Orders</div>
+            {orders.map(order => (
+              <div key={order.id}>
+                <div className={styles.orderHeader}>Order id: {order.id}, Amount: $ {order.lines.reduce((a, c) => c.price * c.quantity + a, 0)}</div>
+                <div className={styles.orderContent}>
+                  {order.lines.map((line, i) => (
+                    <div key={line.producId} className={styles.orderLine}>
+                      <div className="row">
+                        <div className="col-1">
+                          {i + 1}.
+                        </div>
+                        <div className="col-7">
+                          {line.title} ($ {line.price})
+                        </div>
+                        <div className="col-2">
+                          {line.quantity}
+                        </div>
+                        <div className="col-2">
+                          {line.quantity * line.price}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                
+              </div>
+            ))}
+            
+          </div>)
+          }
+          {!isContent &&  <div className={styles.pageHeader}>There is no orders of this user</div> }
+          
+        </div>
+      );
+    }
+      
+    
   }
 }
 

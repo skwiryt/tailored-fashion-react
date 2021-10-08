@@ -49,7 +49,7 @@ class Product extends React.Component {
       
       <div>
         <div className=''>Loading ...</div>
-        {error && <div>Error occurred while loading.</div>}
+        {error && <div className="alert errorAlert">Error occurred while loading.</div>}
       </div>
     );
     else {
@@ -66,7 +66,6 @@ class Product extends React.Component {
           <div className='row g-5'>
             <div className='col-7'>            
               <div className={styles.productImage}>
-                { !imageLoaded && <div className={styles.placeholder}>Loading...</div> }
                 <img onLoad={() => this.setImageLoaded(true)} className={imageLoaded ? styles.visible : styles.hidden} src={`${PHOTO_URL}/${mainImage}`} alt='Product'/>              
               </div>
             </div>
