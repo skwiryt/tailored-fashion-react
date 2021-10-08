@@ -39,8 +39,8 @@ const server = app.listen(process.env.PORT || 8000, () => {
 const devDBString = process.env.TAILORED_DB_STRING;
 const testDBString = 'mongodb://localhost:27017/tailoredDB';
 // process.env prowadzi do bazy Atlas, więc dla lokalnego uruchomienia developerskiego wykomentuj tę linię
-const dbURI = process.env.NODE_ENV === 'test' ? testDBString : devDBString;
-// const dbURI = testDBString;
+// const dbURI = process.env.NODE_ENV === 'test' ? testDBString : devDBString;
+const dbURI = testDBString;
 
 
 mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true });

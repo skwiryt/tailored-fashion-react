@@ -25,5 +25,17 @@ a, a:hover, a:visited {
 a:hover {
   font-weight: bolder;
 }
+.alert {  
+  padding: 3 * $base-size;
+  text-align: center;
+  background: $color-sub-background;
+  &.successAlert {    
+    border: 1px solid $color-dark;
+  }
+  &.errorAlert {
+    border: 1px solid red;
+    color: red;
+  }
+}
 
 

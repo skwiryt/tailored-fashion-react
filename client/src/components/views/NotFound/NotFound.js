@@ -5,7 +5,8 @@ import styles from './NotFound.module.scss';
 
 const NotFound = () => (
   <div className={styles.root}>
-    NotFound component here.
+    <div className="alert errorAlert">Page not found</div>
+    
   </div>
 );
 

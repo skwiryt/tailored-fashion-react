@@ -19,6 +19,7 @@ class Cart extends React.Component  {
     const cartValue = cartLines.reduce((a, c) => c.quantity * c.price + a, 0);
     return (
       <div className={styles.root}>
+        <div className={styles.pageHeader}>Your Cart</div>
         {cartLines.map((cartLine, i) => (
           <CartLine removeLine={this.manageRemoveLine} lineNb={i + 1} key={cartLine.productId} cartLine={cartLine}/>
         ))}

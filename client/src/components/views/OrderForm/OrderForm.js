@@ -78,8 +78,8 @@ class OrderForm extends React.Component {
     const total = cartLines.reduce((a, c) => a + c.quantity * c.price, 0);
     return (
       <div className={styles.root}>
-        { (sent && !request.active && !request.error) && <div className="alert alert-success" role="alert">Your order has been succesfully submited.</div> }
-        { (sent && request.error) && <div className="alert alert-danger" role="alert">Request Error.</div> }
+        { (sent && !request.active && !request.error) && <div className="alert successAlert" role="alert">Your order has been succesfully submited.</div> }
+        { (sent && request.error) && <div className="alert errorAlert" role="alert">Request Error.</div> }
         { (sent && request.active) && <div className="d-flex justify-content-center"><div className="spinner-border text-secondary" role="status"><span className="sr-only">Loading...</span></div></div> }
         { !sent && (
           <div>

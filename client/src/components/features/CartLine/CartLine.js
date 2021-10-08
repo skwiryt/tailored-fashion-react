@@ -36,17 +36,17 @@ class CartLine extends React.Component  {
     return (
       <div className={styles.root}>        
         <div className='row g-3'>          
-          <div className='col-1'>
+          <div className='col-12 col-sm-1'>
             <div className={styles.itemNb}>
               <div>{`${lineNb}.`}</div>
             </div>
           </div>
-          <div className='col-2'>
+          <div className='col-4 col-sm-5 col-md-2'>
             <div className={styles.productImage}>
               <img src={`${PHOTO_URL}/${cartLine.photo}`} alt='product'/>
             </div>
           </div>
-          <div className='col-4'>
+          <div className='col-7 col-sm-6 col-md-4'>
             <div className={styles.productInfo}>
               <div>
                 <div className={styles.productTitle}>
@@ -64,7 +64,7 @@ class CartLine extends React.Component  {
                 
             </div>
           </div>
-          <div className='col-4'>
+          <div className='col-11 col-md-4'>
             <div className={styles.notes}>              
               <textarea onChange={this.manageNote} placeholder="Add your notes here" value={note}></textarea>
             </div>
