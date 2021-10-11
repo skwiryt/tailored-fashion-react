@@ -5,24 +5,73 @@
   background-color: $color-sub-background;
   border: 1px solid $color-dark;
   padding: 1.5 * $base-size 2 * $base-size;
+  height: 6 * $base-size;
   z-index: 10;
   position: fixed;
   top: 0;
   letter-spacing: $font-spacing;
+  @media (min-width: 768px) {
+    padding: 1.5 * $base-size 1.5 * $base-size;
+  }
  }
  nav {
-   position: relative;
-   display: flex;
-   justify-content: space-between;
-   align-items: center;
+   position: relative;   
+   display: flex;   
+   flex-direction: column;
+   justify-content:center;
+   align-items:flex-end;
+   height: 100%;
+
+   @media (min-width: 992px) {
+    flex-direction: row;
+    align-items: center;    
+    justify-content: space-between;
+  }  
  }
  .link {
-   margin: 0 2 * $base-size;
- }
- .logo {
-   position: absolute;
-   left: 50%;
-   transform: translate(-50%);
-   font-size: 1.5 * $font-base-size;
+    margin: 10px 0 0 0;
+   @media (min-width: 992px) {
+    margin: 0 2 * $base-size;
+   }
    
  }
+ .hamburger nav {  
+  display: flex;   
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: center;
+  height: 100%;
+ }
+ .logo {
+  font-size: 1.2 * $font-base-size;
+  @media (min-width: 768px) {
+    font-size: 1.5 * $font-base-size;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    transform: translate(-50%);
+  }
+   @media (min-width: 992px) {
+    position: absolute;
+    
+    font-size: 1.5 * $font-base-size;
+    }
+   
+   
+ }
+ 
+ .hamburger {
+   display: block;
+   @media (min-width: 992px) {
+     display: none;
+   }
+ }
+ 
+ .menu {
+   display: none;
+   @media (min-width: 992px) {
+    display: block;
+  }  
+ }
+
+ 

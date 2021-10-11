@@ -2,7 +2,10 @@
 
 .root {
   margin: 2 * $base-size auto;
-  width: 60%;
+  width: 85%;
+  @media (min-width: 768px) {
+    width: 60%;
+  }
  }
  .pageHeader {
   font-size: 2 * $base-size;

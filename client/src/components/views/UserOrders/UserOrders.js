@@ -45,7 +45,7 @@ class UserOrders extends React.Component  {
                 <div className={styles.orderHeader}>Order id: {order.id}, Amount: $ {order.lines.reduce((a, c) => c.price * c.quantity + a, 0)}</div>
                 <div className={styles.orderContent}>
                   {order.lines.map((line, i) => (
-                    <div key={line.producId} className={styles.orderLine}>
+                    <div key={line.productId} className={styles.orderLine}>
                       <div className="row">
                         <div className="col-1">
                           {i + 1}.
@@ -53,11 +53,11 @@ class UserOrders extends React.Component  {
                         <div className="col-7">
                           {line.title} ($ {line.price})
                         </div>
-                        <div className="col-2">
+                        <div className="col-1 col-lg-2 d-flex justify-content-end">
                           {line.quantity}
                         </div>
-                        <div className="col-2">
-                          {line.quantity * line.price}
+                        <div className="col-3 col-lg-2 d-flex justify-content-end">
+                          $ {line.quantity * line.price}
                         </div>
                       </div>
                     </div>
