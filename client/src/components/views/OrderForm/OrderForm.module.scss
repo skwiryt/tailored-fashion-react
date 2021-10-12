@@ -72,6 +72,7 @@
     .validationMessage {
       color: red;
       position:absolute;
+      width: 80vw;
       top: -2 * $base-size;
       font-size: 1.1 * $base-size;
     }    

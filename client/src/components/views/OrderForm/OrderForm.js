@@ -22,7 +22,7 @@ class OrderForm extends React.Component {
       if (this.state.error.email || this.state.error.name) {
         switch (name) {
           case 'email' : 
-            if (!this.emaiEmpty(value) && this.emaiOK(value)) this.setState({...this.state, error: {...this.state.error, email: null}});
+            if (!this.emailEmpty(value) && this.emailOK(value)) this.setState({...this.state, error: {...this.state.error, email: null}});
             break;
           case 'name' :
             if (!this.nameEmpty(value) && this.nameOK(value)) this.setState({...this.state, error: {...this.state.error, name: null}});
@@ -47,7 +47,7 @@ class OrderForm extends React.Component {
     let error = {email: null, name: null};
     if(this.emailEmpty(email) ) error.email = `You can't leave email field empty`;
     else if(this.nameEmpty(name)) error.name = `You can't leave name field empty`;
-    else if(!this.nameOK(name)) error.name = `Name must be between 5 and 30 characters`;
+    else if(!this.nameOK(name)) error.name = `Enter between 5 and 30 characters`;
     else if(!this.emailOK(email)) error.email =  `Enter valid email`;
 
     return error;
@@ -121,7 +121,7 @@ class OrderForm extends React.Component {
             <div className={styles.contact}>
               <div className={styles.contactHeader} >Contact info</div>
               
-              <div className="row g-3 gx-lg-5">
+              <div className="row g-4 gx-lg-5">
                 <div className="col-12 col-md-6">                  
                   <div className={styles.formGroup}>
                     { error.email && <div className={styles.validationMessage}>{error.email}</div> }
