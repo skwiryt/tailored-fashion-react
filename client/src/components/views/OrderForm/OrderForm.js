@@ -120,29 +120,29 @@ class OrderForm extends React.Component {
             </div>
             <div className={styles.contact}>
               <div className={styles.contactHeader} >Contact info</div>
-              <form>
-                <div className="row g-3">
-                  <div className="col-6 d-flex justify-content-end">                  
-                    <div className={styles.formGroup}>
-                      { error.email && <div className={styles.validationMessage}>{error.email}</div> }
-                      <input onChange={this.handleChange} name="email" type="email" placeholder="Your Email" className={styles.email} />
-                    </div>
-                  </div>
-                  <div className="col-6">
-                    <div className={styles.formGroup}>
-                      { error.name && <div className={styles.validationMessage}>{error.name}</div> }
-                      <input onChange={this.handleChange} name="name" type="text" placeholder="Your Name" className={styles.name} />
-                    </div>
-                    
-                  </div>
-                  <div className="col-6 d-flex justify-content-end">
-                    <button type="submit" onClick={this.handleSubmit} className={styles.sendButton}>Send Order</button>
-                  </div>
-                  <div className="col-6">
-                    <Link to="/cart"><button type="button" className={styles.backButton}>Back to Cart</button></Link>
+              
+              <div className="row g-3 gx-lg-5">
+                <div className="col-12 col-md-6">                  
+                  <div className={styles.formGroup}>
+                    { error.email && <div className={styles.validationMessage}>{error.email}</div> }
+                    <input onChange={this.handleChange} name="email" type="email" placeholder="Your Email" className={styles.email} />
                   </div>
                 </div>
-              </form>
+                <div className="col-12 col-md-6">
+                  <div className={styles.formGroup}>
+                    { error.name && <div className={styles.validationMessage}>{error.name}</div> }
+                    <input onChange={this.handleChange} name="name" type="text" placeholder="Your Name" className={styles.name} />
+                  </div>
+                  
+                </div>
+                <div className="col-12 col-md-6">
+                  <button type="submit" onClick={this.handleSubmit} className={styles.sendButton}>Send Order</button>
+                </div>
+                <div className="col-12 col-md-6">
+                  <Link to="/cart"><button type="button" className={styles.backButton}>Back to Cart</button></Link>
+                </div>
+              </div>
+              
             </div>
           </div>
         )}

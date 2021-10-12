@@ -1,8 +1,11 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  margin: 2 * $base-size auto;
-  width: 60%;
+  margin: 3 * $base-size auto;
+  width: 100%;
+  @media (min-width: 576px) {
+    width: 60%;
+  }
 }
 .pageHeader {
   font-size: 2 * $base-size;
@@ -33,16 +36,28 @@
 .total {
   font-size: 2 * $base-size;
   text-align: right;
-  margin: $base-size 0 $base-size 0;
+  padding: $base-size 0 3 * $base-size 0;
+  border-bottom: 1px solid $color-dark;
 }
 .contact {
-  margin-top: 3*$base-size;
-  padding: 3 * $base-size;
-  border-top: 1px solid $color-dark;
-  .formGroup {
+  
+  margin: 0 auto;
+  padding: 3 * $base-size;  
+  width: 70%;
+  @media (min-width: 576px) {
+    width: 100%;
+  }
+  @media (min-width: 992px) {
+    width: 90%;
+  }
+  @media (min-width: 1200px) {
     width: 70%;
+  }
+  
+  .formGroup {
+    width: 100%;
     max-width: 350px;
-    min-width: 200px;
+    // min-width: 200px;
     position: relative;
     input {
       width: 100%;
@@ -65,14 +80,15 @@
  
   
   button {
-    width: 70%;
+    width: 100%;
     max-width: 350px;
-    min-width: 200px;
+    // min-width: 200px;
     padding: 10px;
     cursor: pointer;
     text-align: center;
     color: $color-sub-background;
     background: black;
     border: 0;
+    
   }
 }

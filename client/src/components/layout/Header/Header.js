@@ -85,7 +85,7 @@ class Header extends React.Component{
             {/* <NavLink className={styles.link} exact to={`/`} activeClassName='active'>ABOUT</NavLink> */}
           </div>
           <div className={styles.logo}>
-            <Link className={styles.link} exact to={`/`} >TAILORED FASHION</Link>
+            <Link className={styles.link} to={`/`} >TAILORED FASHION</Link>
           </div>
           <div className={styles.menu}>
             {activeAgent && <NavLink className={styles.link} exact to={`/userOrders/${userId}`} activeClassName='active'>ORDERS</NavLink>}

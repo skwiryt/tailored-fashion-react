@@ -7,8 +7,11 @@
   position: relative;
   border: 1px solid $color-dark;
   width: 100%;
-  height: 75vw;
+  height: 140vw;
   overflow: hidden;
+  @media (min-width: 576px) {
+    height: 75vw;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -34,6 +37,10 @@
   .logo {
     text-transform: uppercase;
     letter-spacing: $font-spacing;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+    }
   }
   .productTitle {
     font-size: $font-base-size * 2;
@@ -52,7 +59,7 @@
     .thumbnail {
       width: $thumb-width;
       overflow: hidden;
-      margin-right: 5px;
+      margin-right: 5px; 
       img {
         width: 100%;
       }

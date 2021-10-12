@@ -1,7 +1,7 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  margin: 2 * $base-size auto;
+  margin: 3 * $base-size auto;
   width: 85%;
   @media (min-width: 768px) {
     width: 60%;

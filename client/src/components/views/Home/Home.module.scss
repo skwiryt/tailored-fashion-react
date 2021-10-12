@@ -1,11 +1,12 @@
 @import '../../../styles/settings.scss';
 
 .root {
-  margin-top: 4 * $base-size;
+  margin-top: 5 * $base-size;
  }
  .productPrice {
   text-align: center;
-  visibility: hidden;
+  opacity: 0;
+  @extend %transition-params;
 }
  .productBox {
    width: 100%;
@@ -50,7 +51,7 @@
     border: 2px solid rgb(212, 212, 212);
   }
   &:hover .productPrice {
-    visibility: visible;
+    opacity: 1;
   }
  }
  

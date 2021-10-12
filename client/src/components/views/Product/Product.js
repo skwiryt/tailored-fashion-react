@@ -63,13 +63,13 @@ class Product extends React.Component {
       };
       return (
         <div className={styles.root}>
-          <div className='row g-5'>
-            <div className='col-7'>            
+          <div className='row gy-5 g-sm-5'>
+            <div className='col-12 col-sm-7'>            
               <div className={styles.productImage}>
                 <img onLoad={() => this.setImageLoaded(true)} className={imageLoaded ? styles.visible : styles.hidden} src={`${PHOTO_URL}/${mainImage}`} alt='Product'/>              
               </div>
             </div>
-            <div className='col-5'>
+            <div className='col-12 col-sm-5'>
               <div className={styles.productInfo} >
                 <div className={styles.logo}>Tailored Fashion</div>
                 <div className={styles.productTitle}>{product.title}</div>
