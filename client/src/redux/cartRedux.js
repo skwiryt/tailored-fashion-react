@@ -124,6 +124,11 @@ export const sendOrderRequest = (order) => {
       localStorage.setItem(`TF_activeAgent`, JSON.stringify(true));
       dispatch(markAgent(true));
 
+      // cancel cart
+      localStorage.setItem(`TF_cartLines`, JSON.stringify([]));
+      dispatch(loadCart([]));
+
+
     } catch(err) {      
       console.log('err: ', err);
       dispatch(requestError('SEND_ORDER'));
